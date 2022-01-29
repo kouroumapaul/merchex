@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Python Project</title>
+</head>
+<body>
+  <h1>Hello Django !</h1>
+  <p>My favorites brands are : </p>
+    <ul>
+        {% for brand in brands %}
+            <li>{{brand.name|upper}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
