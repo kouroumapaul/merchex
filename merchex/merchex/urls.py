@@ -19,7 +19,8 @@ from listings import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('brand/', views.brand),
+    path('brands/', views.brand_list, name="brand_list"),
+    path('brands/<int:brand_id>/', views.brand_detail, name="brand_detail"),
     path('about-us', views.about),
     path('contact-us', views.contact),
     path('listings', views.listing),

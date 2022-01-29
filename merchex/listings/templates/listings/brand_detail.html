@@ -1,0 +1,19 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+ <h2>{{ brand.name }}</h2>
+
+<ul>
+ <li>Genre : {{ brand.get_genre_display }}</li>
+ <li>Année de formation : {{ brand.year_formed }}</li>
+ <li>Actif : {{ brand.active|yesno }}</li>
+ {% if brand.official_homepage %}
+ <a href="{{ brand.official_homepage }}">{{ brand.official_homepage }}</a>
+
+ {% endif %}
+</ul>
+
+<p>{{ brand.biography }}</p>
+<a href="{% url 'brand_list' %}" > Voir tous les groupes</a>
+
+{% endblock %}

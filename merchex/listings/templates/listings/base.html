@@ -7,6 +7,9 @@
       <link rel="stylesheet" href="{% static 'listings/style.css' %}" />
 </head>
 <body>
+    <nav>
+     <a href="{% url 'brand_list' %}">Groupes</a>
+   </nav>
     {%block content %} {% endblock %}
 </body>
 </html>

@@ -1,0 +1,12 @@
+{% extends "listings/base.html" %}
+{% block content %}
+  <h1>Hello Django !</h1>
+  <p>My favorites brands are : </p>
+    <ul>
+        {% for brand in brands %}
+            <li>
+                <a href="{% url 'brand_detail' brand.id %}">{{brand.name|upper}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

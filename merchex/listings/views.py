@@ -4,11 +4,18 @@ from listings.models import Brand
 from listings.models import Listing
 
 
-def brand(request):
+def brand_list(request):
     brands = Brand.objects.all()
     return render(request,
-                  "listings/brand.html",
+                  "listings/brand_list.html",
                   {"brands": brands})
+
+
+def brand_detail(request, brand_id):
+    brand = Brand.objects.get(id=brand_id)
+    return render(request,
+                  "listings/brand_detail.html",
+                  context={'brand': brand})
 
 
 def about(request):
